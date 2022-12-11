@@ -58,8 +58,10 @@ fun main() {
             }
         }
 
-        val sortedCounts = inspectedCounts.values.sortedByDescending { it }
-        return sortedCounts[0] * sortedCounts[1]
+        return inspectedCounts.values
+                .sortedByDescending { it }
+                .take(2)
+                .fold(1) { acc, i -> acc * i }
     }
 
     fun part2(input: List<String>): Long {
@@ -86,8 +88,10 @@ fun main() {
             }
         }
 
-        val sortedCounts = inspectedCounts.values.sortedByDescending { it }
-        return sortedCounts[0] * sortedCounts[1]
+        return inspectedCounts.values
+                .sortedByDescending { it }
+                .take(2)
+                .fold(1) { acc, i -> acc * i }
     }
 
     // test if implementation meets criteria from the description, like:
